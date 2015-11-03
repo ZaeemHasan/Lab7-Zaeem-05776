@@ -1,0 +1,166 @@
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body>
+<button type="button" id="fbutton" onClick="FormCreate()" >Create Form</button>	<br/>
+<button type="button" id="unbutton" onClick="uname()" >Create Username Field</button>
+<button type="button" id="pbutton" onClick="upass()" >Create Password Field</button>
+<button type="button" id="pbutton" onClick="ugen()" >Create Gender Field</button>
+<button type="button" id="pbutton" onClick="uveh()" >Create Vehicle Field</button>
+<div id="update"><div>
+
+<!--
+<p><div id="d1">Create new Text Input</div> &nbsp <div id="d2">Create new Password Input</div><p>
+-->
+<script type="text/javascript">
+	var f, username, pass, gender,gender1 ,vehicle, address, phoneno;
+	function FormCreate(){
+		
+		f = document.createElement("form");
+		f.setAttribute('method',"post");
+		f.setAttribute('action',"submit.php");
+		
+		var s = document.createElement("input"); //input element, Submit button
+		s.setAttribute('type',"submit");
+		s.setAttribute('value',"Submit");
+		f.appendChild(s);
+		
+		document.getElementsByTagName('body')[0].appendChild(f);
+	}
+	
+	function uname() {
+		username = document.createElement("input"); //input element, text
+		var label = document.createElement("LABEL");
+		var tn = document.createTextNode("Username: ");
+		username.setAttribute('type',"text");
+		username.setAttribute('name',"un");	
+		username.setAttribute('id',"un");
+		label.setAttribute("for", "un");
+		label.appendChild(tn);
+		document.getElementsByTagName('form')[0].insertBefore(label,document.getElementById("un"));
+		document.getElementsByTagName('form')[0].appendChild(username);
+	}
+	function upass() {
+		pass = document.createElement("input"); //input element, text
+		var label = document.createElement("LABEL");
+		var tn = document.createTextNode("Password: ");
+		pass.setAttribute('type',"password");
+		pass.setAttribute('name',"password");	
+		pass.setAttribute('id',"password");
+		label.setAttribute("for", "password");
+		label.appendChild(tn);
+		document.getElementsByTagName('form')[0].insertBefore(label,document.getElementById("password"));
+		document.getElementsByTagName('form')[0].appendChild(pass);
+	}
+	function ugen() {
+		gender = document.createElement("input"); //input element, text
+		var label = document.createElement("LABEL");
+		gender.setAttribute('type',"radio");
+		gender.setAttribute('name',"radio1");	
+		gender.setAttribute('id',"radio1");
+		gender.setAttribute('value',"male");
+		label.appendChild(gender);
+		label.appendChild(document.createTextNode("Male"));
+		document.getElementsByTagName('form')[0].appendChild(label);
+		
+		gender1 = document.createElement("input"); //input element, text
+		var label1 = document.createElement("LABEL");
+		gender1.setAttribute('type',"radio");
+		gender1.setAttribute('name',"radio1");	
+		gender1.setAttribute('id',"radio1");
+		gender1.setAttribute('value',"female");
+		label1.appendChild(gender1);
+		label1.appendChild(document.createTextNode("Female"));
+		document.getElementsByTagName('form')[0].appendChild(label1);
+	}
+	function uveh() {
+		
+		vehicle = document.createElement("select"); //input element, text
+		vehicle.setAttribute('id',"vehi");
+		var label = document.createElement("LABEL");
+		var tn = document.createTextNode("Vehicle: ");
+		vehicle.setAttribute('id',"optionselect");
+		var x1 = document.createElement("option");
+		var x2 = document.createElement("option");
+		var x3 = document.createElement("option");
+		var x4 = document.createElement("option");
+		
+		x1.text="Toyota";
+		x2.text="BMW";
+		x3.text="Audi";
+		x4.text="Suzuki";
+		
+		vehicle.add(x1);
+		vehicle.add(x2);
+		vehicle.add(x3);
+		vehicle.add(x4);
+		
+		label.setAttribute("for", "vehi");
+		label.appendChild(tn);
+		document.getElementsByTagName('form')[0].insertBefore(label,document.getElementById("vehi"));
+		document.getElementsByTagName('form')[0].appendChild(vehicle);
+	}	
+	
+	function utext() {
+		username = document.createElement("input"); //input element, text
+		var label = document.createElement("LABEL");
+		var tn = document.createTextNode("Username: ");
+		username.setAttribute('type',"text");
+		username.setAttribute('name',"un");	
+		username.setAttribute('id',"un");
+		label.setAttribute("for", "un");
+		label.appendChild(tn);
+		document.getElementsByTagName('form')[0].insertBefore(label,document.getElementById("un"));
+		document.getElementsByTagName('form')[0].appendChild(username);
+	}
+	
+/*	var f;
+	var items= new Array();
+	function getEventTarget(e) {
+        e = e || window.event;
+        return e.target || e.srcElement; 
+    }
+	
+	var createform = document.getElementById("d1");
+	createform= function (event){
+				var target = getEventTarget(event);
+				f = document.createElement("form");
+				items[0] = document.createElement('div');
+				items[1] = document.createElement('div');
+				items[2] = document.createElement('div');
+				items[3] = document.createElement('div');
+				items[4] = document.createElement('div');
+				
+	}
+	
+	var f = document.createElement("form");
+f.setAttribute('method',"post");
+f.setAttribute('action',"submit.php");
+
+var i = document.createElement("input"); //input element, text
+i.setAttribute('type',"text");
+i.setAttribute('name',"username");
+
+var s = document.createElement("input"); //input element, Submit button
+s.setAttribute('type',"submit");
+s.setAttribute('value',"Submit");
+
+f.appendChild(i);
+f.appendChild(s);
+
+//and some more input elements here
+//and dont forget to add a submit button
+
+document.getElementsByTagName('body')[0].appendChild(f);
+*/
+
+
+
+
+</script>
+
+</body>
+</html>
